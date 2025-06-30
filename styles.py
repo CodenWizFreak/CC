@@ -17,7 +17,7 @@ def apply_custom_styles():
         --light-ochre: #e6b800;
         --dark-ochre: #b38600;
         --cream: #f5f1e8;
-        --warm-white: #fdfcf7;
+        --warm-white: #ffeac9;
         --text-dark: #3e2723;
         --text-light: #6d4c41;
     }
@@ -29,12 +29,21 @@ def apply_custom_styles():
             var(--cream) 50%, 
             #f0e6d2 100%);
         font-family: 'Source Sans Pro', sans-serif;
-        color: var(--text-dark);
+        color: var(--text-dark) !important;
     }
     
-    .stFont {
-        font-family: 'Source Sans Pro', sans-serif;
-        color: var(--text-dark);
+    /* Force text color throughout the app */
+    body, .stTextInput, .stTextArea, .stSelectbox, .stMultiSelect, 
+    .stRadio, .stCheckbox, .stNumberInput, .stSlider, .stDateInput,
+    .stTimeInput, .stFileUploader, .stMarkdown, .stDataFrame,
+    .stTable, .stAlert, .stExpander, .stTabs, .stButton {
+        color: var(--text-dark) !important;
+    }
+    
+    /* Specific element overrides */
+    .stTextInput input, .stTextArea textarea, 
+    .stSelectbox select, .stMultiSelect select {
+        color: var(--text-dark) !important;
     }
     
     /* Title Styling */
@@ -49,7 +58,16 @@ def apply_custom_styles():
         font-weight: 700;
         margin-bottom: 0.5rem;
         text-shadow: 2px 2px 4px rgba(149, 69, 53, 0.1);
-        color: var(--text-dark);
+    }
+    
+    /* Multiselect specific fixes */
+    .stMultiSelect div[data-baseweb="select"] input {
+        color: var(--text-dark) !important;
+    }
+    
+    .stMultiSelect div[data-baseweb="tag"] {
+        background-color: var(--yellow-ochre) !important;
+        color: var(--text-dark) !important;
     }
     
     /* Caption/Subtitle Styling */
@@ -206,7 +224,7 @@ def apply_custom_styles():
     }
     
     /* Metrics */
-    .metric-container {
+    .stMetrics .metric-container {
         background: linear-gradient(135deg, var(--warm-white), var(--cream));
         border-radius: 15px;
         padding: 1.5rem;
