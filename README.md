@@ -39,6 +39,9 @@ An interactive Streamlit-based application that uses **Knowledge Graphs** and **
 
 ````
 
+## 🔄 Workflow
+
+<img src="src/cc.png" alt="Workflow Diagram" width="600"/>
 
 ## 🚀 Getting Started
 
