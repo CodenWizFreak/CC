@@ -41,7 +41,7 @@ An interactive Streamlit-based application that uses **Knowledge Graphs** and **
 
 ## 🔄 Workflow
 
-<img src="src/cc.png" alt="Workflow Diagram" width="600"/>
+<img src="https://github.com/Anidipta/CC/blob/main/src/cc.png" alt="Workflow Diagram" width="600"/>
 
 ## 🚀 Getting Started
 
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 ### 📦 NLTK Setup (Run Once)
 
 ```bash
-python setup_nltk.py
+python setup_nlp.py
 ```
 
 > 💡 This ensures `punkt`, `punkt_tab`, and taggers are downloaded correctly, even in restricted environments.
