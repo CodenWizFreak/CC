@@ -41,7 +41,41 @@ An interactive Streamlit-based application that uses **Knowledge Graphs** and **
 
 ## 🔄 Workflow
 
-<img src="https://github.com/Anidipta/CC/blob/main/src/cc.png" alt="Workflow Diagram" width="600"/>
+```mermaid
+flowchart LR
+    %% Nodes
+    A[User Input Text]:::input
+    B[Sentence Tokenization<br/>NLTK or fallback]:::nlp
+    C[SVO Triplet Extraction<br/>Subject-Verb-Object]:::nlp
+    D["Build Knowledge Graph<br/>Nodes = Entities<br/>Edges = Relations"]:::graphbuild
+    E["Compute Entropies<br/>H_local = -Σp*log₂p<br/>H_struct = -Σp*log₂p"]:::entropy
+    F["Semantic Divergence<br/>D_cos = 1 - cosine similarity"]:::entropy
+    G["Combined Score<br/>S = α*H_local + β*H_struct + γ*D"]:::entropy
+    H["Entropy-Guided Traversal<br/>Stop if ΔS ≥ threshold"]:::entropy
+    I[Visualize Graph + Entropy]:::vis
+    J["Export Results"]:::output
+    
+    %% Connections
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    
+    %% Define styles
+    classDef input fill:#D0F0C0,stroke:#333,stroke-width:2px,color:#000
+    classDef nlp fill:#C7CEEA,stroke:#333,stroke-width:2px,color:#000
+    classDef graphbuild fill:#FDFD96,stroke:#333,stroke-width:2px,color:#000
+    classDef entropy fill:#FFB347,stroke:#333,stroke-width:2px,color:#000
+    classDef vis fill:#AEC6CF,stroke:#333,stroke-width:2px,color:#000
+    classDef output fill:#B0E0E6,stroke:#333,stroke-width:2px,color:#000
+```
+
+---
 
 ## 🚀 Getting Started
 
