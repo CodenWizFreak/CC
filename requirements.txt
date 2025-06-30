@@ -1,0 +1,12 @@
+streamlit
+spacy
+networkx
+plotly
+numpy
+pandas
+scikit-learn
+torch
+transformers
+nltk
+scipy
+regex
