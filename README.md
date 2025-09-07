@@ -152,7 +152,3 @@ streamlit run app.py
   `ΔScore ≥ θ` ⇒ Sentence boundary
 
 
----
-
-## 📬 Contact
-* 💻 [GitHub](https://github.com/Anidipta)
